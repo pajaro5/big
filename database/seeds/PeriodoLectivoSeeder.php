@@ -1,9 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Big\Carrera;
+use Big\PeriodoLectivo;
 
-class CarrerasTableSeeder extends Seeder
+class PeriodoLectivoSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -13,6 +13,6 @@ class CarrerasTableSeeder extends Seeder
     public function run()
     {
         $count = 1;
-        factory(Carrera::class, $count)->create();
+        factory(PeriodoLectivo::class, $count)->create();
     }
 }

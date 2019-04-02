@@ -4,6 +4,7 @@ namespace Big\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Big\PeriodoAcademico;
+use Big\PeriodoLectivo;
 
 class HomeController extends Controller
 {
@@ -24,8 +25,35 @@ class HomeController extends Controller
      */
     public function index()
     {
+        //Periodo Lectivo actual
+        $periodoLectivoActual = PeriodoLectivo::where('esActivo',true)->first();
+        
+        //Obtengo 1 Carrera, ahora está quemado.  Debe traer la carrera del coordinador
+        $carrera = $periodoLectivoActual->carreras()->first()->get();
+
         //consultar los periodos
-        $periodosAcademicos = PeriodoAcademico::where('carrera_id',1)->get();
-        return view('home',compact('periodosAcademicos'));
+        $periodosAcademicos = PeriodoAcademico::where('carrera_id',$carrera->id)->get();
+
+        //contar los docentes asignados para el periodo lectivo actual
+
+        
+        //calcular el total de asignaturas creadas
+        $contadorAsignaturas = 0;
+
+        foreach ($periodosAcademicos as $periodoAcademico) {
+            $contadorAsignaturas = $contadorAsignaturas + $periodoAcademico->asignaturas->count();
+        }
+
+        
+
+
+        
+        return view(
+                    'home',
+                    compact(
+                            'periodosAcademicos',
+                            'contadorAsignaturas'
+                            )
+                );
     }
 }

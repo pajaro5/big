@@ -1,9 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Big\Carrera;
+use Big\Docente;
 
-class CarrerasTableSeeder extends Seeder
+class DocenteTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,7 +12,7 @@ class CarrerasTableSeeder extends Seeder
      */
     public function run()
     {
-        $count = 1;
-        factory(Carrera::class, $count)->create();
+        $count = 8;
+        factory(Docente::class, $count)->create();
     }
 }

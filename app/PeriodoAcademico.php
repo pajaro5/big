@@ -8,11 +8,16 @@ class PeriodoAcademico extends Model
 {
     public function asignaturas()
     {
-        return $this->hasMany('Big\Asignatura');
+        return $this->hasMany(Asignatura::class);
     }
 
-    public function periodoAcademico()
+    public function carreras()
     {
         return $this->belongsTo(Carrera::class);
+    }
+
+    public function paralelos()
+    {
+        return $this->hasMany(Paralelo::class);
     }
 }

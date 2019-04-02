@@ -15,6 +15,7 @@ class CreateCarrerasTable extends Migration
     {
         Schema::create('carreras', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedInteger('periodo_lectivo_id');
             $table->string('nombre');
             $table->string('modalidad');
             $table->timestamps();

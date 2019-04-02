@@ -15,4 +15,14 @@ class Asignatura extends Model
     {
         return $this->belongsTo('Big\PeriodoAcademico');
     }
+
+    public function paralelos()
+    {
+        return $this->belongsToMany(Paralelo::class);
+    }
+
+    public function docentes()
+    {
+        return $this->belongsToMany(Docente::class);
+    }
 }

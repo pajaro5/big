@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Big\Carrera;
 use Big\PeriodoAcademico;
 
 class PeriodoAcademicoTableSeeder extends Seeder
@@ -12,7 +13,9 @@ class PeriodoAcademicoTableSeeder extends Seeder
      */
     public function run()
     {
-        $count = 50;
+        $periodosAcademicos = generateRandomIntegerBetween(1,5);
+        
+        $count = Carrera::count() * $periodosAcademicos;
         factory(PeriodoAcademico::class, $count)->create();
     }
 }

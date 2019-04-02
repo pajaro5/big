@@ -13,6 +13,11 @@ class Carrera extends Model
 
     public function estudiantes()
     {
-        return $this->hasMany('Big\Estudiante');
+        return $this->hasMany(Estudiante::class);
+    }
+
+    public function periodosLectivos()
+    {
+        return $this->belongsTo(PeriodoLectivo::class);
     }
 }

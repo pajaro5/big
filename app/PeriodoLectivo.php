@@ -7,8 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 class PeriodoLectivo extends Model
 {
 
-    public function matriculas()
+    public function carreras()
     {
-        return $this->hasMany('Big\Matricula');
+        return $this->hasMany(Carrera::class);
+    }
+
+    public function docentes()
+    {
+        return $this->belongsToMany(Docente::class);
     }
 }

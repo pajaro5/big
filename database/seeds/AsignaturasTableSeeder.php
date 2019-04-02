@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use Big\Asignatura;
+use Big\PeriodoAcademico;
 
 class AsignaturasTableSeeder extends Seeder
 {
@@ -12,7 +13,7 @@ class AsignaturasTableSeeder extends Seeder
      */
     public function run()
     {
-        $count = rand(1, 6);
+        $count = PeriodoAcademico::count() * 5;
         factory(Asignatura::class, $count)->create();
     }
 }

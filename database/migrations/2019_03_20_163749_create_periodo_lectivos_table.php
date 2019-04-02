@@ -17,8 +17,9 @@ class CreatePeriodoLectivosTable extends Migration
             $table->bigIncrements('id');
             $table->string('codigo', 50);
             $table->string('nombre', 100);
-            $table->date('inicio');
-            $table->date('fin');
+            $table->date('inicio')->nullable();
+            $table->date('fin')->nullable();
+            $table->boolean('esActivo')->default(false);
             $table->timestamps();
         });
     }
