@@ -10,4 +10,9 @@ class Docente extends Model
     {
         return $this->belongsToMany(Asignaturas::class);
     }
+
+    public function periodoLectivo()
+    {
+        return $this->belongsTo(PeriodoLectivo::class);
+    }
 }

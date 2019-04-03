@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use Big\Paralelo;
+use Big\PeriodoAcademico;
 
 class ParaleloTableSeeder extends Seeder
 {
@@ -12,7 +13,11 @@ class ParaleloTableSeeder extends Seeder
      */
     public function run()
     {
-        $count = generateRandomIntegerBetween(1,3);
-        factory(Paralelo::class, $count)->create();
+
+        $conteoPeriodosAcademicos = PeriodoAcademico::count();
+
+        $count = generateRandomIntegerBetween(1,8) * $conteoPeriodosAcademicos;        
+        factory(Paralelo::class, $count)->create();    
+    
     }
 }

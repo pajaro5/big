@@ -15,6 +15,7 @@ class CreateParalelosTable extends Migration
     {
         Schema::create('paralelos', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedInteger('periodo_lectivo_id');
             $table->unsignedInteger('periodo_academico_id');
             $table->string('nombre');
             $table->timestamps();

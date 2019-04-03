@@ -15,8 +15,10 @@ class DatabaseSeeder extends Seeder
             PeriodoLectivoSeeder::class,
             CarrerasTableSeeder::class,
             PeriodoAcademicoTableSeeder::class,
-            DocenteTableSeeder::class,
-            AsignaturasTableSeeder::class
+            DocenteTableSeeder::class,            
+            ParaleloTableSeeder::class,
+            //AsignaturasTableSeeder::class,
+            //AsignaturaDocenteTableSeeder::class
         ]);
     }
 }

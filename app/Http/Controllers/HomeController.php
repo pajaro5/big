@@ -28,11 +28,11 @@ class HomeController extends Controller
         //Periodo Lectivo actual
         $periodoLectivoActual = PeriodoLectivo::where('esActivo',true)->first();
         
-        //Obtengo 1 Carrera, ahora está quemado.  Debe traer la carrera del coordinador
-        $carrera = $periodoLectivoActual->carreras()->first()->get();
+        //Obtengo 1 Carrera, ahora está quemado.  Debe traer la carrera del coordinador logeado
+        $carrera = $periodoLectivoActual->carreras()->first();
 
-        //consultar los periodos
-        $periodosAcademicos = PeriodoAcademico::where('carrera_id',$carrera->id)->get();
+        //consultar los periodos        
+        $periodosAcademicos = $carrera->periodosAcademicos()->get();
 
         //contar los docentes asignados para el periodo lectivo actual
 

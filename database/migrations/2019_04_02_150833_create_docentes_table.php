@@ -15,6 +15,7 @@ class CreateDocentesTable extends Migration
     {
         Schema::create('docentes', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedInteger('periodo_lectivo_id');
             $table->string('nombre');
             $table->string('email');
             $table->timestamps();
