@@ -4,14 +4,10 @@ use Faker\Generator as Faker;
 use Big\PeriodoAcademico;
 use Big\Carrera;
 
-$factory->define(PeriodoAcademico::class, function (Faker $faker) {
-
-    $carreraIdLow = Carrera::min('id');
-    $carreraIdMax = Carrera::max('id');
-
-
+$factory->define(PeriodoAcademico::class, function (Faker $faker, $options) {
+    
     return [
-        'carrera_id' => $faker->numberBetween($min = $carreraIdLow, $max = $carreraIdMax),
+        'carrera_id' => $options['carreraId'],
         'nombre' => $faker->word
     ];
 });
