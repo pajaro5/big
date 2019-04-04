@@ -4,10 +4,10 @@ use Faker\Generator as Faker;
 use Big\PeriodoAcademico;
 use Big\Carrera;
 
-$factory->define(PeriodoAcademico::class, function (Faker $faker, $options) {
+$factory->define(PeriodoAcademico::class, function (Faker $faker) {
     
     return [
-        'carrera_id' => $options['carreraId'],
+        'carrera_id' => 1,//$options['carreraId'],
         'nombre' => $faker->word
     ];
 });

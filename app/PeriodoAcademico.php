@@ -11,7 +11,7 @@ class PeriodoAcademico extends Model
         return $this->hasMany(Asignatura::class);
     }
 
-    public function carreras()
+    public function carrera()
     {
         return $this->belongsTo(Carrera::class);
     }
