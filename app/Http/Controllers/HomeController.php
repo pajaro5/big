@@ -15,7 +15,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        //$this->middleware('auth');
     }
 
     /**
@@ -44,10 +44,6 @@ class HomeController extends Controller
             $contadorAsignaturas = $contadorAsignaturas + $periodoAcademico->asignaturas->count();
         }
 
-        
-
-
-        
         return view(
                     'home',
                     compact(

@@ -20,9 +20,9 @@ class PeriodoAcademicoTableSeeder extends Seeder
 
         //para cada carrera crear periodos académicos aleatorios
         foreach ($carreras as $carrera) {
-            $options['carreraId'] = $carrera->id;            
+            $options['carrera_id'] = $carrera->id;            
             $count = generateRandomIntegerBetween(1,5);
-            factory(PeriodoAcademico::class, $count)->create(); 
+            factory(PeriodoAcademico::class, $count)->create($options); 
         }
         
     }

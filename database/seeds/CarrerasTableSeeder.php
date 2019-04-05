@@ -12,12 +12,7 @@ class CarrerasTableSeeder extends Seeder
      */
     public function run()
     {
-        $count = 2;
-        factory(Carrera::class, $count)
-            ->create()
-            ->each(function ($carrera){
-                $carrera->periodosAcademicos()->save(factory(Big\PeriodoAcademico::class,generateRandomIntegerBetween(1,5))->make());
-
-            });
+        $count = 3;
+        factory(Carrera::class, $count)->create();
     }
 }

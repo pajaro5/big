@@ -6,14 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Asignatura extends Model
 {
-    public function matricula()
+    public function periodoLectivo()
     {
-        return $this->belongsTo('Big\Matricula');
+        return $this->belongsTo(PeriodoLecivo::class);
     }
-
+    
     public function periodoAcademico()
     {
-        return $this->belongsTo('Big\PeriodoAcademico');
+        return $this->belongsTo(PeriodoAcademico::class);
     }
 
     public function paralelos()

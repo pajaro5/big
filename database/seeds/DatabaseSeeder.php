@@ -14,10 +14,12 @@ class DatabaseSeeder extends Seeder
         $this->call([
             PeriodoLectivoSeeder::class,
             CarrerasTableSeeder::class,
-            //PeriodoAcademicoTableSeeder::class
-            //DocenteTableSeeder::class,            
+            PeriodoAcademicoTableSeeder::class,
+            AsignaturasTableSeeder::class,
             //ParaleloTableSeeder::class,
-            //AsignaturasTableSeeder::class,
+            //DocenteTableSeeder::class,            
+            
+            
             //AsignaturaDocenteTableSeeder::class
         ]);
     }
