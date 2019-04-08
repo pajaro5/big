@@ -27,6 +27,7 @@ class HomeController extends Controller
     {
         //Periodo Lectivo actual
         $periodoLectivoActual = PeriodoLectivo::where('esActivo',true)->first();
+        $periodoLectivoNombre = $periodoLectivoActual->nombre;
         
         //Obtengo 1 Carrera, ahora está quemado.  Debe traer la carrera del coordinador logeado
         $carrera = $periodoLectivoActual->carreras()->first();
@@ -39,16 +40,21 @@ class HomeController extends Controller
         
         //calcular el total de asignaturas creadas
         $contadorAsignaturas = 0;
+        $contadorMaxJornadas = 0;
+        $contadorParalelos = 0;
 
         foreach ($periodosAcademicos as $periodoAcademico) {
             $contadorAsignaturas = $contadorAsignaturas + $periodoAcademico->asignaturas->count();
+            $contadorParalelos = $contadorParalelos + $periodoAcademico->paralelos->count(); 
         }
-
+        
         return view(
                     'home',
                     compact(
+                            'periodoLectivoNombre',
                             'carrera',
-                            'contadorAsignaturas'
+                            'contadorAsignaturas',
+                            'contadorParalelos'
                             )
                 );
     }

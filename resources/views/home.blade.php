@@ -5,6 +5,7 @@
     <div class="row">
         <div class="col">
             <h1>Carrera: {{ $carrera->nombre }}</h1>
+            <h4>{{ $periodoLectivoNombre }}</h4>
         </div>
     </div>
     <br> 
@@ -23,11 +24,22 @@
                             <h5 class="card-title">{{ $asignatura->nombre }}</h5>
                             <h6 class="card-subtitle mb-2 text-muted">Código: {{ $asignatura->codigo }}</h6>
                             <p class="card-text">{{ $asignatura->descripcion }}</p>
-                            <a href="#" class="card-link">{{ $asignatura->jornadas->count() }} jornada(s)</a>:
+                            <span class="badge badge-secondary">
+                                {{ $asignatura->jornadas->count() }} 
+                                @if ($asignatura->jornadas->count() > 1)
+                                    jornadas
+                                @else
+                                    jornada
+                                @endif
+                            </span>
+                            <br>
                             @foreach ($asignatura->jornadas as $jornada)
-                                {{ $jornada->nombre }}
-                            @endforeach 
-                            <a href="#" class="card-link">{{ $asignatura->jornadas[0]->paralelos->count() }} paralelo(s)</a>
+                                <b>{{ $jornada->nombre }}</b>: 
+                                @foreach($jornada->paralelos as $paralelo)
+                                    {{ $paralelo->nombre }}&nbsp;
+                                @endforeach
+                                <br>
+                            @endforeach                             
                         </div>
                     </div>
                 </div>
@@ -37,7 +49,6 @@
             <br>
         </div>
         <div class="col-lg-2">
-            Aquí estadística
            <div class="card" style="width: 18rem;">
                <div class="card-body">
                    <h5 class="card-title">{{ $carrera->periodosAcademicos->count() }} periodos académicos</h5>
@@ -52,7 +63,7 @@
            <br>
            <div class="card" style="width: 18rem;">
                <div class="card-body">
-                   <h5 class="card-title">Paralelos</h5>
+                   <h5 class="card-title"> {{ $contadorParalelos }} paralelos</h5>
                </div>
             </div>
             <br>
