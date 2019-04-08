@@ -12,7 +12,7 @@ class CarrerasTableSeeder extends Seeder
      */
     public function run()
     {
-        $count = 3;
+        $count = 5;
         factory(Carrera::class, $count)->create();
     }
 }
