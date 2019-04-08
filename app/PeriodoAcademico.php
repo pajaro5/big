@@ -20,4 +20,9 @@ class PeriodoAcademico extends Model
     {
         return $this->hasMany(Paralelo::class);
     }
+
+    public function jornadas()
+    {
+        return $this->hasMany(Jornada::class);
+    }
 }

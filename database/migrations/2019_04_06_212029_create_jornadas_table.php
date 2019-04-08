@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateParalelosTable extends Migration
+class CreateJornadasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateParalelosTable extends Migration
      */
     public function up()
     {
-        Schema::create('paralelos', function (Blueprint $table) {
+        Schema::create('jornadas', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedInteger('periodo_academico_id');  
-            $table->unsignedInteger('jornada_id');            
+            $table->unsignedInteger('asignatura_id');
+            $table->unsignedInteger('periodo_academico_id');
             $table->string('nombre');
             $table->timestamps();
         });
@@ -29,6 +29,6 @@ class CreateParalelosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('paralelos');
+        Schema::dropIfExists('jornadas');
     }
 }

@@ -16,11 +16,10 @@ class CreateAsignaturasTable extends Migration
         Schema::create('asignaturas', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedInteger('carrera_id');
-            $table->unsignedInteger('periodo_academico_id');
+            $table->unsignedInteger('periodo_academico_id');            
             $table->string('codigo');
             $table->string('nombre');
             $table->text('descripcion');
-            $table->string('jornada', 50);
             $table->timestamps();
         });
     }

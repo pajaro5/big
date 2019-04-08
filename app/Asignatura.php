@@ -16,13 +16,13 @@ class Asignatura extends Model
         return $this->belongsTo(PeriodoAcademico::class);
     }
 
-    public function paralelos()
-    {
-        return $this->belongsToMany(Paralelo::class);
-    }
-
     public function docentes()
     {
         return $this->belongsToMany(Docente::class);
+    }
+
+    public function jornadas()
+    {
+        return $this->hasMany(Jornada::class);
     }
 }

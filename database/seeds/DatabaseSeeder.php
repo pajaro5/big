@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Big\Jornada;
 
 class DatabaseSeeder extends Seeder
 {
@@ -16,11 +17,9 @@ class DatabaseSeeder extends Seeder
             CarrerasTableSeeder::class,
             PeriodoAcademicoTableSeeder::class,
             AsignaturasTableSeeder::class,
-            //ParaleloTableSeeder::class,
+            JornadasTableSeeder::class,
+            ParaleloTableSeeder::class,
             //DocenteTableSeeder::class,            
-            
-            
-            //AsignaturaDocenteTableSeeder::class
         ]);
     }
 }
