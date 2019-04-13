@@ -14,7 +14,7 @@
             @foreach ($carrera->periodosAcademicos as $periodoAcademico)
             <br>
             <div class="alert alert-primary" role="alert">
-                Periodo académico: {{$periodoAcademico->nombre}}
+                Periodo académico: {{$periodoAcademico->nombre}},  # {{ $periodoAcademico->nivel }}
             </div>
             <div class="row">
                 @foreach ($periodoAcademico->asignaturas as $asignatura)                

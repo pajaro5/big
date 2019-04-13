@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePeriodoAcademicosTable extends Migration
+class CreateAsignaturaEstudianteTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreatePeriodoAcademicosTable extends Migration
      */
     public function up()
     {
-        Schema::create('periodo_academicos', function (Blueprint $table) {
+        Schema::create('asignatura_estudiante', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedInteger('carrera_id');
-            $table->string('nombre');
-            $table->unsignedInteger('nivel');
+            $table->unsignedInteger('asignatura_id');
+            $table->unsignedInteger('estudiante_id');
+            $table->unsignedInteger('periodo_lectivo_id');
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ class CreatePeriodoAcademicosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('periodo_academicos');
+        Schema::dropIfExists('asignatura_estudiante');
     }
 }

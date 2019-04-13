@@ -35,7 +35,7 @@ class HomeController extends Controller
         $estudiantes = $carrera->estudiantes->count();
 
         //consultar los periodos        
-        $periodosAcademicos = $carrera->periodosAcademicos()->get();
+        $periodosAcademicos = $carrera->periodosAcademicos()->orderBy('nivel', 'asc')->get();
 
         //contar los docentes asignados para el periodo lectivo actual
 

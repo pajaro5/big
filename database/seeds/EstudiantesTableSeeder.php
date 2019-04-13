@@ -15,6 +15,7 @@ class EstudiantesTableSeeder extends Seeder
     {
         $periodoLectivo = PeriodoLectivo::where('esActivo',true)->first();
         $carreras = $periodoLectivo->carreras;
+        
         $options = array();
         $options['periodo_lectivo_id'] = $periodoLectivo->id;
 

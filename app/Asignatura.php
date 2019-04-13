@@ -25,4 +25,12 @@ class Asignatura extends Model
     {
         return $this->hasMany(Jornada::class);
     }
+
+    public function estudiantes($periodoLectivo)
+    {
+        return $this->belongsToMany(Estudiante::class)
+                                        ->withPivot('periodo_lectivo_id')
+                                        ->wherePivot('periodo_lectivo_id', $periodoLectivo)
+                                        ->withTimestamps();
+    }
 }
