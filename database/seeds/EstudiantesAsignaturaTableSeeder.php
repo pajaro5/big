@@ -23,48 +23,43 @@ class EstudiantesAsignaturaTableSeeder extends Seeder
 
             //Reparto los estudiantes entre los niveles abiertos
             $estudiantesPorNivel = floor($estudiantesMatriculadosCount/$periodosAcademicosAbiertos);
-            
-            $idInicio = 0;
-            $idHasta = $estudiantesPorNivel-1;
-            
-            foreach ($carrera->periodosAcademicos as $periodoAcademico) {
-                //recupero las asignaturas por periodoAcademico
-                $asignaturas = $periodoAcademico->asignaturas->pluck('id')->toArray();
-                dd($asignaturas);  //parece que viene una asignatura de mas.
 
-                foreach ($asignaturas as $asignatura) {
-                   
-                    for ($i=$idInicio; $i < $idHasta  ; $i++) { 
+            //en el ultimo periodo academico pongo los que sobran
+            $contadorPeriodoAcademico = 1;
+
+            $idEstudianteInicio = 0;
+            $idEstudianteHasta = $estudiantesPorNivel-1;
+            
+            foreach ($carrera->periodosAcademicos as $periodoAcademico) {    
+                
+                $asignaturas = $periodoAcademico->asignaturas->pluck('id')->toArray();
+
+                foreach ($asignaturas as $asignatura) {                  
+
+                    for ($i=$idEstudianteInicio; $i < $idEstudianteHasta  ; $i++) { 
                         
                         DB::table('asignatura_estudiante')->insert(
                             [
                                 'asignatura_id' => $asignatura, 
                                 'estudiante_id' => $estudiantesMatriculados[$i]['id'],
                                 'periodo_lectivo_id' => $periodoLectivo->id
+                                //añadir fechas de cración y update
                             ]
                         );
                     }
-                                        
-                }
 
-                $idInicio = $idHasta;
-                $idHasta = $estudiantesPorNivel + $idInicio;  //esta incompleto, incluir IF que ajuste en el último nivel a los que quedan sueltos por el redondeo.
+                }                
 
-                
+                $contadorPeriodoAcademico++;
+
+                $idEstudianteInicio = $idEstudianteHasta;
+
+                if ($contadorPeriodoAcademico < $periodosAcademicosAbiertos) {
+                    $idEstudianteHasta = $idEstudianteInicio + $estudiantesPorNivel - 1;
+                } else{
+                    $idEstudianteHasta = count($estudiantesMatriculados)-1;
+                }                
             }
-            
-            
-
-            
-
-
-
-
-
-
-
-
-
         }
     }
 }
