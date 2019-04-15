@@ -32,7 +32,7 @@ class HomeController extends Controller
         //Obtengo 1 Carrera, ahora está quemado.  Debe traer la carrera del coordinador logeado
         $carrera = $periodoLectivoActual->carreras()->first();
 
-        $estudiantes = $carrera->estudiantes->count();
+        $estudiantes = $carrera->estudiantesMatriculados($periodoLectivoActual->id)->count();
 
         //consultar los periodos        
         $periodosAcademicos = $carrera->periodosAcademicos()->orderBy('nivel', 'asc')->get();

@@ -20,4 +20,10 @@ class Carrera extends Model
     {
         return $this->belongsTo(PeriodoLectivo::class);
     }
+
+    public function estudiantesMatriculados($periodoLectivo)
+    {
+        return $this->estudiantes()
+                ->where('periodo_lectivo_id', $periodoLectivo);
+    }
 }
