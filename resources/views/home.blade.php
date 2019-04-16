@@ -99,7 +99,7 @@
             <br>
             <div class="card" style="width: 18rem;">
                <div class="card-body">
-                   <h5 class="card-title"> <i class="fal fa-users fa-lg"></i>{{ $estudiantes }} estudiantes</h5>
+                   <h5 class="card-title"> <i class="fal fa-users"> </i>{{ $estudiantes }} estudiantes</h5>
                </div>
             </div>
        </div>
