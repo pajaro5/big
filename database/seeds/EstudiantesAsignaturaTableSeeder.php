@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use Big\PeriodoLectivo;
+use Carbon\Carbon;
 
 class EstudiantesAsignaturaTableSeeder extends Seeder
 {
@@ -42,8 +43,9 @@ class EstudiantesAsignaturaTableSeeder extends Seeder
                             [
                                 'asignatura_id' => $asignatura, 
                                 'estudiante_id' => $estudiantesMatriculados[$i]['id'],
-                                'periodo_lectivo_id' => $periodoLectivo->id
-                                //añadir fechas de cración y update
+                                'periodo_lectivo_id' => $periodoLectivo->id,
+                                'created_at' => Carbon::now(),
+                                'updated_at' => Carbon::now(),
                             ]
                         );
                     }
@@ -57,7 +59,7 @@ class EstudiantesAsignaturaTableSeeder extends Seeder
                 if ($contadorPeriodoAcademico < $periodosAcademicosAbiertos) {
                     $idEstudianteHasta = $idEstudianteInicio + $estudiantesPorNivel - 1;
                 } else{
-                    $idEstudianteHasta = count($estudiantesMatriculados)-1;
+                    $idEstudianteHasta = count($estudiantesMatriculados);// -1;
                 }                
             }
         }

@@ -28,6 +28,7 @@ class HomeController extends Controller
         //Periodo Lectivo actual
         $periodoLectivoActual = PeriodoLectivo::where('esActivo',true)->first();
         $periodoLectivoNombre = $periodoLectivoActual->nombre;
+        $periodoLectivoId = $periodoLectivoActual->id;
         
         //Obtengo 1 Carrera, ahora está quemado.  Debe traer la carrera del coordinador logeado
         $carrera = $periodoLectivoActual->carreras()->first();
@@ -53,6 +54,7 @@ class HomeController extends Controller
         return view(
                     'home',
                     compact(
+                            'periodoLectivoId',
                             'periodoLectivoNombre',
                             'carrera',
                             'contadorAsignaturas',

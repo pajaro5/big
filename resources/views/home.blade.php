@@ -8,6 +8,27 @@
             <h4>{{ $periodoLectivoNombre }}</h4>
         </div>
     </div>
+    <div class="row">
+        <div class="col">
+            <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                <div class="btn-group mr-2" role="group" aria-label="First group">
+                  <button type="button" class="btn btn-secondary">Distribuir paralelos</button>
+                  <button type="button" class="btn btn-secondary">2</button>
+                  <button type="button" class="btn btn-secondary">3</button>
+                  <button type="button" class="btn btn-secondary">4</button>
+                </div>
+                <div class="btn-group mr-2" role="group" aria-label="Second group">
+                  <button type="button" class="btn btn-secondary">5</button>
+                  <button type="button" class="btn btn-secondary">6</button>
+                  <button type="button" class="btn btn-secondary">7</button>
+                </div>
+                <div class="btn-group" role="group" aria-label="Third group">
+                  <button type="button" class="btn btn-secondary">8</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <br> 
     <div class="row">        
         <div class="col-lg-10 ">
@@ -23,8 +44,12 @@
                         <div class="card-body">
                             <h5 class="card-title">{{ $asignatura->nombre }}</h5>
                             <h6 class="card-subtitle mb-2 text-muted">Código: {{ $asignatura->codigo }}</h6>
-                            <p class="card-text">{{ $asignatura->descripcion }}</p>
-                            <span class="badge badge-secondary">
+                            <p class="card-text">{{ $asignatura->descripcion }}</p>                            
+                            <button type="button" class="btn btn-outline-primary">
+                                Estudiantes <span class="badge badge-light">{{ $asignatura->estudiantes($periodoLectivoId)->count() }} </span>
+                            </button>
+                            <hr>
+                            <span class="badge badge-primary">
                                 {{ $asignatura->jornadas->count() }} 
                                 @if ($asignatura->jornadas->count() > 1)
                                     jornadas
