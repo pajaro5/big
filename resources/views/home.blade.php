@@ -11,11 +11,11 @@
     <div class="row">
         <div class="col">
             <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-                <div class="btn-group mr-2" role="group" aria-label="First group">
-                  <button type="button" class="btn btn-secondary"><i class="fal fa-sitemap fa-lg"></i> Distribuir paralelos</button>
-                  <button type="button" class="btn btn-secondary">2</button>
-                  <button type="button" class="btn btn-secondary">3</button>
-                  <button type="button" class="btn btn-secondary">4</button>
+                <div class="btn-group mr-2" role="group" aria-label="Herramientas">
+                    <form>
+                    <button type="submit" formaction="paralelos/estudiantes/create/{{$periodoLectivoId}}/{{$carrera->id}}" class="btn btn-secondary"><i class="fal fa-sitemap fa-lg"></i> Distribuir paralelos</button>                  
+                        <button type="button" class="btn btn-secondary">4</button>
+                    </form>
                 </div>
                 <div class="btn-group mr-2" role="group" aria-label="Second group">
                   <button type="button" class="btn btn-secondary">5</button>

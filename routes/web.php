@@ -18,6 +18,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('admin/home', 'HomeController@index')->name('home');
+Route::get('admin/paralelos/estudiantes/create/{periodoLectivo}/{carrera}', 'ParaleloController@create');
 
 Route::get('/signup', 'HomeController@index')->middleware('guest');
 
