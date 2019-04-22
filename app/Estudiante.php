@@ -18,4 +18,12 @@ class Estudiante extends Model
                                         ->wherePivot('periodo_lectivo_id', $periodoLectivo)
                                         ->withTimestamps();
     }
+
+    public function paralelos($periodoLectivo)
+    {
+        return $this->belongsToMany(Paralelo::class) 
+                                        ->withPivot('periodo_lectivo_id')
+                                        ->wherePivot('periodo_lectivo_id', $periodoLectivo)
+                                        ->withTimestamps();
+    }
 }

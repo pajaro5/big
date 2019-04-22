@@ -10,4 +10,12 @@ class Paralelo extends Model
     {
         return $this->belongsTo(Jornada::class);
     }
+
+    public function estudiantes($periodoLectivo)
+    {
+        return $this->belongsToMany(Estudiante::class)
+                                        ->withPivot('periodo_lectivo_id')
+                                        ->wherePivot('periodo_lectivo_id', $periodoLectivo)
+                                        ->withTimestamps();
+    }
 }
