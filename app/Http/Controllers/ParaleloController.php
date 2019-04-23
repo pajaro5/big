@@ -12,7 +12,7 @@ class ParaleloController extends Controller
     public function create(PeriodoLectivo $periodoLectivo, Carrera $carrera)
     {        
         //dd($periodoLectivo);
-
+        dd($carrera->periodosAcademicos[0]->asignaturas[0]);
         return redirect()->route('home');
     }
 }
