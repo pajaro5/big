@@ -33,4 +33,9 @@ class Asignatura extends Model
                                         ->wherePivot('periodo_lectivo_id', $periodoLectivo)
                                         ->withTimestamps();
     }
+
+    public function asignaturas($periodoLectivo)
+    {
+        
+    }
 }
