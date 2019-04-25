@@ -11,12 +11,14 @@ class ParaleloController extends Controller
     //Realiza la asignación de los estudiantes matriculados a los paralelos.
     public function create(PeriodoLectivo $periodoLectivo, Carrera $carrera)
     {        
-        dd($carrera->periodosAcademicos[0]->asignaturas[0]->estudiantes->count());
+        //dd($carrera->periodosAcademicos[0]->asignaturas[0]->estudiantes->count());
 
         foreach ($carrera->periodosAcademicos as $periodoAcademico) {
-            foreach ($periodoAcademico->asignaturas as $asignatura) {
+            foreach ($periodoAcademico->asignaturas as $asignatura) {                
                 $estudiantes = $asignatura->estudiantes($periodoLectivo->id);
+                
                 $paralelos = $asignatura->paralelos($periodoLectivo->id);
+                dd($estudiantes->count());//hacer metodo paralelos
 
                 $estudiantesPorParalelo = floor($estudiantes->count()/$paralelos->count());
 
@@ -27,9 +29,14 @@ class ParaleloController extends Controller
                 //split estudiantes
                 $gruposEstudiantes = $estudiantesMezclados->split($estudiantesPorParalelo);
 
+                $contador = 0;
                 //asignar estudiante a paralelo
                 foreach ($paralelos as $paralelo) {
-                    # code...
+
+                    foreach ($gruposEstudiantes[$contador] as $estudiante) {
+                        $estudiante->registrarEnParalelo($paralelo);
+                    }
+                    $contador++;
                 }
             }
         }
