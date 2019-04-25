@@ -28,7 +28,7 @@ class ParaleloController extends Controller
                 $gruposEstudiantes = $estudiantesMezclados->split($estudiantesPorParalelo);
 
                 //asignar estudiante a paralelo
-                foreach ($asignatura->paralelos as $paralelo) {
+                foreach ($paralelos as $paralelo) {
                     # code...
                 }
             }
