@@ -34,8 +34,19 @@ class Asignatura extends Model
                                         ->withTimestamps();
     }
 
-    public function asignaturas($periodoLectivo)
+    public function paralelos($periodoLectivo)
     {
-        
+        $paralelosPorAsignatura = array();
+        $jornadas = $this->jornadas()->get();
+        foreach ($jornadas as $jornada) {
+
+            foreach ($jornada->paralelos as $paralelo) {
+                array_push($paralelosPorAsignatura,$paralelo);
+            }
+          
+        }
+
+        return $paralelosPorAsignatura;
+               
     }
 }

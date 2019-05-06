@@ -3,6 +3,8 @@
 namespace Big;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class Estudiante extends Model
 {
@@ -25,5 +27,12 @@ class Estudiante extends Model
                                         ->withPivot('periodo_lectivo_id')
                                         ->wherePivot('periodo_lectivo_id', $periodoLectivo)
                                         ->withTimestamps();
+    }
+
+    public function registrarEnParalelo($paralelo)
+    {
+        //dd('creado: ' . Carbon::now());
+        DB::insert('insert into estudiante_paralelo (estudiante_id, paralelo_id,periodo_lectivo_id, created_at, updated_at) values (?, ?, ?, ?, ?)', [$this->id, $paralelo->id, $this->periodo_lectivo_id, Carbon::now(), Carbon::now()]);
+
     }
 }

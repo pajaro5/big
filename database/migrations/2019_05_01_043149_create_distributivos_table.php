@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateEstudianteParaleloTable extends Migration
+class CreateDistributivosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,8 @@ class CreateEstudianteParaleloTable extends Migration
      */
     public function up()
     {
-        Schema::create('estudiante_paralelo', function (Blueprint $table) {
+        Schema::create('distributivos', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedInteger('estudiante_id');
-            $table->unsignedInteger('paralelo_id');
-            $table->unsignedInteger('periodo_lectivo_id');
             $table->timestamps();
         });
     }
@@ -29,6 +26,6 @@ class CreateEstudianteParaleloTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('estudiante_paralelos');
+        Schema::dropIfExists('distributivos');
     }
 }
