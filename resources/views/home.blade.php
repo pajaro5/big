@@ -14,11 +14,7 @@
             <hr>
             <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
                 <div class="btn-group mr-2" role="group" aria-label="Herramientas">
-                    <form>
-                        <paralelo-component></paralelo-component>
-                                      
-                        <button type="button" class="btn btn-secondary">boton extra</button>
-                    </form>
+                    <paralelo-component></paralelo-component>
                 </div>
             </div>
         </div>

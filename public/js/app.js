@@ -37082,11 +37082,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "button",
-    {
-      staticClass: "btn btn-secondary",
-      attrs: { click: "asignarParalelos" },
-      on: { "": function($event) {} }
-    },
+    { staticClass: "btn btn-secondary", on: { click: _vm.asignarParalelos } },
     [
       _c("i", { staticClass: "fal fa-sitemap fa-lg" }),
       _vm._v(" Distribuir paralelos")
