@@ -1769,12 +1769,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['periodoAcademicoId', 'carreraId'],
   mounted: function mounted() {
     console.log('listo el pollo.');
   },
   methods: {
     asignarParalelos: function asignarParalelos(event) {
-      alert('Se ejecuta el algoritmo');
+      alert('Se ejecuta el algoritmo: periodo: ' + this.periodoAcademicoId + ' carrera: ' + this.carreraId);
     }
   }
 });

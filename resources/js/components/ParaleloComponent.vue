@@ -5,12 +5,16 @@
 
 <script>
     export default {
+        props: [
+            'periodoAcademicoId',
+            'carreraId'
+        ],
         mounted() {
             console.log('listo el pollo.');
         },
         methods: {
              asignarParalelos: function (event) {
-                 alert('Se ejecuta el algoritmo');
+                 alert('Se ejecuta el algoritmo: periodo: ' + this.periodoAcademicoId + ' carrera: ' + this.carreraId);
              }
         },
     }
