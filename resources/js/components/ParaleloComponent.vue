@@ -15,6 +15,10 @@
         methods: {
              asignarParalelos: function (event) {
                  alert('Se ejecuta el algoritmo: periodo: ' + this.periodoAcademicoId + ' carrera: ' + this.carreraId);
+                 
+                axios
+                    .get('admin/paralelos/estudiantes/create/'+this.periodoAcademicoId+'/'+this.carreraId )
+                    .then(alert("se corrió el algoritmo"))
              }
         },
     }

@@ -14,7 +14,7 @@
             <hr>
             <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
                 <div class="btn-group mr-2" role="group" aria-label="Herramientas">
-                    <paralelo-component periodo-academico-id={{ $periodoLectivoId }} carrera-id={{ $carrera->id }}></paralelo-component>
+                    <paralelo-component periodo-academico-id= {{ $periodoLectivoId }} carrera-id={{ $carrera->id }}  ></paralelo-component>
                 </div>
             </div>
         </div>

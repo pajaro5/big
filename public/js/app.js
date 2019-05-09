@@ -1776,6 +1776,7 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     asignarParalelos: function asignarParalelos(event) {
       alert('Se ejecuta el algoritmo: periodo: ' + this.periodoAcademicoId + ' carrera: ' + this.carreraId);
+      axios.get('admin/paralelos/estudiantes/create/' + this.periodoAcademicoId + '/' + this.carreraId).then(alert("se corrió el algoritmo"));
     }
   }
 });
