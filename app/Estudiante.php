@@ -31,8 +31,8 @@ class Estudiante extends Model
 
     public function registrarEnParalelo($paralelo)
     {
-        //dd('creado: ' . Carbon::now());
         DB::insert('insert into estudiante_paralelo (estudiante_id, paralelo_id,periodo_lectivo_id, created_at, updated_at) values (?, ?, ?, ?, ?)', [$this->id, $paralelo->id, $this->periodo_lectivo_id, Carbon::now(), Carbon::now()]);
 
     }
+
 }

@@ -13,12 +13,15 @@
             console.log('listo el pollo.');
         },
         methods: {
-             asignarParalelos: function (event) {
-                 alert('Se ejecuta el algoritmo: periodo: ' + this.periodoAcademicoId + ' carrera: ' + this.carreraId);
-                 
-                axios
-                    .get('admin/paralelos/estudiantes/create/'+this.periodoAcademicoId+'/'+this.carreraId )
-                    .then(alert("se corrió el algoritmo"))
+             asignarParalelos: function (event) {                 
+                 console.log('http://big.test/admin/paralelos/estudiantes/create/'+this.periodoAcademicoId+'/'+this.carreraId);
+            axios
+                .get('http://big.test/admin/paralelos/estudiantes/create/'+this.periodoAcademicoId+'/'+this.carreraId )
+                
+                //.then(response => response.count)
+                .then(response => {
+						console.log(response.data.count)
+					});
              }
         },
     }

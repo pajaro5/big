@@ -1775,8 +1775,11 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     asignarParalelos: function asignarParalelos(event) {
-      alert('Se ejecuta el algoritmo: periodo: ' + this.periodoAcademicoId + ' carrera: ' + this.carreraId);
-      axios.get('admin/paralelos/estudiantes/create/' + this.periodoAcademicoId + '/' + this.carreraId).then(alert("se corrió el algoritmo"));
+      console.log('http://big.test/admin/paralelos/estudiantes/create/' + this.periodoAcademicoId + '/' + this.carreraId);
+      axios.get('http://big.test/admin/paralelos/estudiantes/create/' + this.periodoAcademicoId + '/' + this.carreraId) //.then(response => response.count)
+      .then(function (response) {
+        console.log(response.data.count);
+      });
     }
   }
 });
