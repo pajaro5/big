@@ -21,6 +21,7 @@ window.Vue = require('vue');
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
 
 Vue.component('paralelo-component', require('./components/ParaleloComponent.vue').default);
+Vue.component('ping-pong-spinner-component', require('./components/PingPongSpinnerComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
