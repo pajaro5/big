@@ -4,25 +4,27 @@
 <div class="container">
     <div class="row">
         <div class="col">
-        <h1><i class="fas fa-university fa-2x"></i> {{ $carrera->nombre }}</h1>
-        <h4>{{ $carrera->descripcion }} / {{ $periodoLectivoNombre }}</h4>
+            <h1>Distributivo Docente</h1>
+            <h2><i class="fas fa-university fa-2x"></i> Carrera {{ $carrera->nombre }}</h2>
+            <h4>{{ $periodoLectivoNombre }}</h4>
         </div>
     </div>
     <div class="row">
         <div class="col">
-            
-            <hr>
             <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
                 <div class="btn-group mr-2" role="group" aria-label="Herramientas">
-                    <button class="btn btn-secondary" onclick="location.href='distributivo/home'">
-                        <i class="fal fa-users fa-lg"></i>   
-                        Asignar docentes
-                    </button>
-                    &nbsp;  
-                    <paralelo-component 
-                        periodo-academico-id= {{ $periodoLectivoId }} 
-                        carrera-id={{ $carrera->id }}>
-                    </paralelo-component>                      
+                    <form>
+                    <button type="submit" formaction="paralelos/estudiantes/create/{{$periodoLectivoId}}/{{$carrera->id}}" class="btn btn-secondary"><i class="fal fa-sitemap fa-lg"></i> Distribuir paralelos</button>                  
+                        <button type="button" class="btn btn-secondary">4</button>
+                    </form>
+                </div>
+                <div class="btn-group mr-2" role="group" aria-label="Second group">
+                  <button type="button" class="btn btn-secondary">5</button>
+                  <button type="button" class="btn btn-secondary">6</button>
+                  <button type="button" class="btn btn-secondary">7</button>
+                </div>
+                <div class="btn-group" role="group" aria-label="Third group">
+                  <button type="button" class="btn btn-secondary">8</button>
                 </div>
             </div>
         </div>

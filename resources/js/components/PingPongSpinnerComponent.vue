@@ -15,7 +15,7 @@ export default {
     name: 'pingPongSpinner',
     props: {
         size: {
-        default: "40px"
+        default: "80px"
         }
     },
     computed: {

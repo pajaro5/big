@@ -15,6 +15,7 @@ class CreatePeriodoAcademicosTable extends Migration
     {
         Schema::create('periodo_academicos', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedInteger('periodo_lectivo_id');
             $table->unsignedInteger('carrera_id');
             $table->string('nombre');
             $table->unsignedInteger('nivel');

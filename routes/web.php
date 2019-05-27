@@ -17,6 +17,9 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::get('admin/setup', 'ImportarController@index');
+Route::get('admin/setup/importarData/{codigo}/{nombre}', 'ImportarController@all');
+
 Route::get('admin/home', 'HomeController@index')->name('home');
 Route::get('admin/paralelos/estudiantes/create/{periodoLectivo}/{carrera}', 'ParaleloController@create')->name('crearParalelos');
 

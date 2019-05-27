@@ -14,7 +14,6 @@ class DistributivoController extends Controller
      */
     public function index()
     {
-        dd('hola');
         return view('distributivo.home');
     } 
 

@@ -1824,7 +1824,7 @@ __webpack_require__.r(__webpack_exports__);
   name: 'pingPongSpinner',
   props: {
     size: {
-      "default": "40px"
+      "default": "80px"
     }
   },
   computed: {
