@@ -17,12 +17,15 @@ class CreateEstudiantesTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedInteger('periodo_lectivo_id');
             $table->unsignedInteger('carrera_id');
+            $table->unsignedInteger('jornada')->nullable(true);
             $table->string('nombre1');
             $table->string('nombre2');
             $table->string('apellido1');
             $table->string('apellido2');
             $table->string('identificacion');
-            $table->string('telefono_celular');
+            $table->string('telefono_celular')->nullable(true);
+            $table->string('telefono_fijo')->nullable(true);;
+            $table->integer('tiene_discapacidad');
             $table->string('correo');
             $table->timestamps();
         });

@@ -3,12 +3,14 @@
 namespace Big;
 
 use Illuminate\Database\Eloquent\Model;
+use Big\Asignatura;
 
 class PeriodoAcademico extends Model
 {
     public function asignaturas()
     {
-        return $this->hasMany(Asignatura::class);
+        return $this->hasMany(Asignatura::class, )
+                    ->where('carrera_id', $this->carrera_id);        
     }
 
     public function carrera()

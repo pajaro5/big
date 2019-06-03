@@ -31,7 +31,7 @@ class HomeController extends Controller
         $periodoLectivoId = $periodoLectivoActual->id;
         
         //Obtengo 1 Carrera, ahora está quemado.  Debe traer la carrera del coordinador logeado
-        $carrera = $periodoLectivoActual->carreras()->first();
+        $carrera = $periodoLectivoActual->carreras()->where('id',6)->first();
 
         $estudiantes = $carrera->estudiantesMatriculados($periodoLectivoActual->id)->count();
 
